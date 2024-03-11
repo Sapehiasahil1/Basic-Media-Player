@@ -23,7 +23,7 @@ class ContentResolverHelper @Inject constructor(@ApplicationContext val context:
         MediaStore.Audio.AudioColumns.TITLE,
     )
 
-    private var selectionClause: String? = "${MediaStore.Audio.AudioColumns.DISPLAY_NAME} ASC"
+    private var selectionClause: String? = "${MediaStore.Audio.AudioColumns.IS_MUSIC} = ? AND ${MediaStore.Audio.Media.MIME_TYPE} NOT IN (?, ?, ?)"
 
     private var selectionArg = arrayOf("1")
 
